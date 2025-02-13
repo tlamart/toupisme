@@ -1,9 +1,23 @@
 
-const queryString = window.location.search;
-const UrlParams = new URLSearchParams(queryString);
-let preq = document.getElementById('request')
-const reqcontent = UrlParams.get("req")
-preq.innerText = reqcontent
-let panswer = document.getElementById('answer')
-const anscontent = UrlParams.get("ans")
-panswer.innerText = anscontent
+const UrlParams = new URLSearchParams(window.location.search);
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function question() {
+    let preq = document.getElementById('request');
+    await sleep(3000);
+    preq.classList.add("rounded-md", "bg-pink-400", "p-5", "mb-5");
+    preq.innerText = UrlParams.get("req");
+}
+
+async function answer() {
+    let panswer = document.getElementById('answer');
+    await sleep(6000);
+    panswer.classList.add("rounded-md", "bg-pink-500", "p-5");
+    panswer.innerText = UrlParams.get("ans");
+}
+
+question();
+answer();
