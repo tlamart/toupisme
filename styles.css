@@ -572,6 +572,21 @@
   .table {
     display: table;
   }
+  .w-100 {
+    width: calc(var(--spacing) * 100);
+  }
+  .w-\[200px\] {
+    width: 200px;
+  }
+  .w-\[300px\] {
+    width: 300px;
+  }
+  .w-auto {
+    width: auto;
+  }
+  .w-md {
+    width: var(--container-md);
+  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -638,6 +653,9 @@
   }
   .pl-3 {
     padding-left: calc(var(--spacing) * 3);
+  }
+  .text-center {
+    text-align: center;
   }
   .text-2xl {
     font-size: var(--text-2xl);
